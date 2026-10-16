@@ -234,10 +234,11 @@ def run_training(args):
         random_state=args.seed
     )
     
-    print(f"Dataset total: {len(dfs['train']) + len(dfs['val']) + len(dfs['test'])} muestras")
-    print(f"  Train: {len(dfs['train'])} muestras ({len(dfs['train'])/55.72:.1f}%)")
-    print(f"  Val:   {len(dfs['val'])} muestras ({len(dfs['val'])/55.72:.1f}%)")
-    print(f"  Test:  {len(dfs['test'])} muestras ({len(dfs['test'])/55.72:.1f}%)")
+    total_samples = len(dfs['train']) + len(dfs['val']) + len(dfs['test'])
+    print(f"Dataset total: {total_samples} muestras")
+    print(f"  Train: {len(dfs['train'])} muestras ({len(dfs['train'])/total_samples*100:.1f}%)")
+    print(f"  Val:   {len(dfs['val'])} muestras ({len(dfs['val'])/total_samples*100:.1f}%)")
+    print(f"  Test:  {len(dfs['test'])} muestras ({len(dfs['test'])/total_samples*100:.1f}%)")
     print(f"Vocabulario construido: {len(vocab)} tokens únicos")
     
     # Guardar vocabulario

@@ -1,130 +1,130 @@
 [
   {
     "id": 1,
-    "message": "URGENT! We are trying to contact U. Todays draw shows that you have won a £800 prize GUARANTEED. Call 09050001295 from land line. Claim A21. Valid 12hrs only",
+    "message": "Servicio Postal: No pudimos entregar su envío el día de hoy. Actualice su dirección de domicilio y pague $350 de reenvío en http://seguridad-banca-alerta.com",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.999510645866394,
+    "spam_probability": 0.9999674558639526,
     "is_correct": true
   },
   {
     "id": 2,
-    "message": "FREE entry into our £250 weekly comp just send the word ENTER to 84128 NOW. 18 T&C www.textcomp.com cust care 08712405020.",
+    "message": "ALERTA: Tienes una factura vencida de $500. Evita el reporte negativo y suspensión del servicio pagando de inmediato en http://actualizacion-datos-urgente.net",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.9998067021369934,
+    "spam_probability": 0.9997965693473816,
     "is_correct": true
   },
   {
     "id": 3,
-    "message": "This msg is for your mobile content order It has been resent as previous attempt failed due to network error Queries to customersqueries@netvision.uk.com",
+    "message": "Hi, the SEXYCHAT girls are waiting for you to text them. Text now for a great night chatting. send STOP to stop this service",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.9733244180679321,
+    "spam_probability": 0.9954656958580017,
     "is_correct": true
   },
   {
     "id": 4,
-    "message": "Quite lor. But dun tell him wait he get complacent...",
+    "message": "Jay wants to work out first, how's 4 sound?",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.0036746207624673843,
+    "spam_probability": 0.002854805439710617,
     "is_correct": true
   },
   {
     "id": 5,
-    "message": "Okie",
+    "message": "Hey... are you going to quit soon? Xuhui and i working till end of the month ",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.0004838115128222853,
+    "spam_probability": 0.00048352795420214534,
     "is_correct": true
   },
   {
     "id": 6,
-    "message": "Ü go home liao? Ask dad to pick me up at 6...",
+    "message": "I'll be late...",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.0008374793105758727,
+    "spam_probability": 0.00032010074937716126,
     "is_correct": true
   },
   {
     "id": 7,
-    "message": "Aight I've been set free, think you could text me blake's address? It occurs to me I'm not quite as sure what I'm doing as I thought I was",
+    "message": "K give me a sec, breaking a  &lt;#&gt;  at cstore",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.015230902470648289,
+    "spam_probability": 0.000318265228997916,
     "is_correct": true
   },
   {
     "id": 8,
-    "message": "I have no money 4 steve mate! !",
+    "message": "Ummma.will call after check in.our life will begin from qatar so pls pray very hard.",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.0032227537594735622,
+    "spam_probability": 0.004232731182128191,
     "is_correct": true
   },
   {
     "id": 9,
-    "message": "Claim a 200 shopping spree, just call 08717895698 now! Have you won! MobStoreQuiz10ppm",
+    "message": "Has recibido una transferencia pendiente por €1,200. Para liberar los fondos en tu cuenta confirma tu clave dinámica en https://verifica-tu-cuenta-hoy.net",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.9988353848457336,
+    "spam_probability": 0.9996949434280396,
     "is_correct": true
   },
   {
     "id": 10,
-    "message": "Cheers for the card ... Is it that time of year already?",
+    "message": "Ela kano.,il download, come wen ur free..",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.0047059981152415276,
+    "spam_probability": 0.002701353281736374,
     "is_correct": true
   },
   {
     "id": 11,
-    "message": "Please call our customer service representative on FREEPHONE 0808 145 4742 between 9am-11pm as you have WON a guaranteed £1000 cash or £5000 prize!",
+    "message": "Fancy a shag? I do.Interested? sextextuk.com txt XXUK SUZY to 69876. Txts cost 1.50 per msg. TnCs on website. X",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.9995158910751343,
+    "spam_probability": 0.9993999004364014,
     "is_correct": true
   },
   {
     "id": 12,
-    "message": "Ur cash-balance is currently 500 pounds - to maximize ur cash-in now send CASH to 86688 only 150p/msg. CC: 08708800282 HG/Suite342/2Lands Row/W1J6HL",
+    "message": "URGENT! You have won a 1 week FREE membership in our £100,000 Prize Jackpot! Txt the word: CLAIM to No: 81010 T&C www.dbuk.net LCCLTD POBOX 4403LDNW1A7RW18",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.9991461038589478,
+    "spam_probability": 0.9999586343765259,
     "is_correct": true
   },
   {
     "id": 13,
-    "message": "staff.science.nus.edu.sg/~phyhcmk/teaching/pc1323",
+    "message": "Ok...",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.02479763701558113,
+    "spam_probability": 0.0010980562074109912,
     "is_correct": true
   },
   {
     "id": 14,
-    "message": "Only if you promise your getting out as SOON as you can. And you'll text me in the morning to let me know you made it in ok.",
+    "message": "Dear, take care. I am just reaching home.love u a lot.",
     "true_label": "ham",
     "predicted_label": "ham",
-    "spam_probability": 0.003582380246371031,
+    "spam_probability": 0.000731397420167923,
     "is_correct": true
   },
   {
     "id": 15,
-    "message": "Bought one ringtone and now getting texts costing 3 pound offering more tones etc",
+    "message": "Please call our customer service representative on FREEPHONE 0808 145 4742 between 9am-11pm as you have WON a guaranteed £1000 cash or £5000 prize!",
     "true_label": "spam",
-    "predicted_label": "ham",
-    "spam_probability": 0.10043317824602127,
-    "is_correct": false
+    "predicted_label": "spam",
+    "spam_probability": 0.9995367527008057,
+    "is_correct": true
   },
   {
     "id": 16,
-    "message": "Do you want 750 anytime any network mins 150 text and a NEW video phone for only five pounds per week call 08000776320 now or reply for delivery Tomorrow",
+    "message": "Notificación de Entrega: Su paquete #90500 está retenido en aduana por falta de pago de impuestos de $500. Pague aquí: https://verifica-tu-cuenta-hoy.net",
     "true_label": "spam",
     "predicted_label": "spam",
-    "spam_probability": 0.9992577433586121,
+    "spam_probability": 0.9999074935913086,
     "is_correct": true
   }
 ]

@@ -104,10 +104,12 @@ class SpamPredictor:
             
         is_spam = bool(prob >= 0.5)
         label = "spam" if is_spam else "ham"
+        label_es = "SPAM (Fraudulento / No deseado)" if is_spam else "LEGÍTIMO (Seguro)"
         confidence = prob if is_spam else (1.0 - prob)
         
         return {
             "label": label,
+            "label_es": label_es,
             "is_spam": is_spam,
             "spam_probability": float(prob),
             "ham_probability": float(1.0 - prob),
@@ -127,7 +129,7 @@ def main():
     parser.add_argument("--text", type=str, help="Texto del mensaje a clasificar")
     args = parser.parse_args()
     
-    sample_text = args.text or "URGENT! You have won a £1,000 cash prize! Call 09061701461 to claim your reward now."
+    sample_text = args.text or "¡URGENTE! Su cuenta bancaria ha sido suspendida temporalmente. Verifique su identidad ahora en http://seguridad-banca-alerta.com"
     print(f"\n--- Probando Inferencia con Texto de Entrada ---")
     print(f"Texto: '{sample_text}'\n")
     
@@ -135,9 +137,9 @@ def main():
     result = predictor.predict(sample_text)
     
     print(f"Resultado de Clasificación:")
-    print(f"  Etiqueta Predicha:       {result['label'].upper()}")
+    print(f"  Etiqueta Predicha:       {result['label_es']}")
     print(f"  Probabilidad de Spam:    {result['spam_probability']*100:.2f}%")
-    print(f"  Probabilidad de Legítimo:{result['ham_probability']*100:.2f}%")
+    print(f"  Probabilidad Legítimo:   {result['ham_probability']*100:.2f}%")
     print(f"  Nivel de Confianza:      {result['confidence']*100:.2f}%")
     print(f"  Tokens extraídos ({result['token_count']}): {result['tokens']}")
 

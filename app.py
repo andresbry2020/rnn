@@ -184,8 +184,9 @@ def main():
             st.info("Entrenando modelo para mostrar métricas...")
             
         st.divider()
-        st.markdown("👨‍💻 **Dataset:** [UCI SMS Spam Collection](https://archive.ics.uci.edu/dataset/228/sms+spam+collection)")
-        st.markdown("📦 **Muestras:** 5,572 mensajes")
+        st.markdown("🌎 **Idiomas soportados:** Español 🇪🇸 & Inglés 🇺🇸")
+        st.markdown("👨‍💻 **Dataset:** [UCI SMS Spam + Corpus Español](https://archive.ics.uci.edu/dataset/228/sms+spam+collection)")
+        st.markdown("📦 **Muestras:** 6,772 mensajes")
 
     if error_msg:
         st.error(f"⚠️ El modelo aún no ha sido entrenado o no se encontraron los archivos en `saved_models/`.\nError: {error_msg}")
@@ -204,30 +205,30 @@ def main():
     # PESTAÑA 1: ANALIZADOR EN TIEMPO REAL
     # ==========================================
     with tab1:
-        st.subheader("Ingresar Mensaje para Clasificación")
-        st.write("Escriba cualquier mensaje de texto SMS, correo o notificación para evaluar su probabilidad de Spam o Phishing en tiempo real.")
+        st.subheader("Ingresar Mensaje para Clasificación (Español o Inglés)")
+        st.write("Escriba cualquier mensaje de texto SMS, correo o notificación en **español** o **inglés** para evaluar su probabilidad de Spam o Phishing en tiempo real.")
 
-        # Botones de ejemplos rápidos
-        st.markdown("**Ejemplos predefinidos para prueba rápida:**")
+        # Botones de ejemplos rápidos en Español
+        st.markdown("**Ejemplos predefinidos para prueba rápida (Español e Inglés):**")
         ex_col1, ex_col2, ex_col3, ex_col4 = st.columns(4)
         
         ejemplo_seleccionado = ""
-        if ex_col1.button("🚨 Premio £1,000 (Spam)"):
-            ejemplo_seleccionado = "WINNER!! As a valued network customer you have been selected to receive a £1,000 cash prize reward! Call 09061701461 now. Valid 12 hours only."
-        if ex_col2.button("🚨 Alerta Bancaria (Spam)"):
-            ejemplo_seleccionado = "URGENT! Your banking access is temporarily suspended. Verify your identity at http://secure-bank-login.com to avoid permanent closure."
-        if ex_col3.button("🟢 Reunión Trabajo (Ham)"):
-            ejemplo_seleccionado = "Hi team, please remember our sprint review meeting is scheduled for tomorrow morning at 10:00 AM. See you all."
-        if ex_col4.button("🟢 Saludo Personal (Ham)"):
-            ejemplo_seleccionado = "Hey! Are you free for dinner tonight? Let me know what time works best for you and where you'd like to go."
+        if ex_col1.button("🚨 Premio $1,000 (Spam ES)"):
+            ejemplo_seleccionado = "¡FELICIDADES! Has sido seleccionado como ganador de un premio en efectivo de $1,000. Reclama tu código 87121 llamando al 09061701461 hoy mismo."
+        if ex_col2.button("🚨 Alerta Bancaria (Spam ES)"):
+            ejemplo_seleccionado = "¡URGENTE! Su cuenta bancaria Bancolombia ha sido suspendida temporalmente por actividad sospechosa. Verifique su identidad ahora en http://seguridad-banca-alerta.com"
+        if ex_col3.button("🟢 Reunión Trabajo (Legítimo ES)"):
+            ejemplo_seleccionado = "Hola Carlos, ¿cómo vas? Te escribo para confirmar nuestra reunión de trabajo mañana a las 10:00 AM en la oficina. Nos vemos."
+        if ex_col4.button("🟢 Mensaje Familiar (Legítimo ES)"):
+            ejemplo_seleccionado = "Mamá, ya salí de la universidad, voy en camino a casa. ¿Necesitas que compre algo en el supermercado para la cena?"
 
         # Área de texto
-        default_val = ejemplo_seleccionado if ejemplo_seleccionado else "Congratulations! You have won a free coupon worth $500. Claim your prize immediately by clicking https://gift-reward.com"
+        default_val = ejemplo_seleccionado if ejemplo_seleccionado else "¡URGENTE! Su cuenta bancaria ha sido bloqueada temporalmente. Ingrese inmediatamente a https://verifica-tu-cuenta-hoy.net para evitar la suspensión definitiva."
         user_input = st.text_area(
-            "Mensaje de texto:",
+            "Mensaje de texto a evaluar:",
             value=default_val,
             height=110,
-            placeholder="Ingrese el mensaje aquí..."
+            placeholder="Escriba aquí su mensaje en español o inglés..."
         )
 
         col_btn1, col_btn2 = st.columns([1, 5])
@@ -235,7 +236,7 @@ def main():
             analizar_btn = st.button("🚀 Clasificar Mensaje", type="primary", use_container_width=True)
 
         if user_input.strip() and (analizar_btn or ejemplo_seleccionado):
-            with st.spinner("Procesando secuencia a través de la BiLSTM..."):
+            with st.spinner("Procesando secuencia a través de la red neuronal BiLSTM..."):
                 res = predictor.predict(user_input)
 
             st.divider()
@@ -252,13 +253,13 @@ def main():
                 else:
                     st.markdown("""
                     <div class='ham-badge'>
-                        🛡️ MENSAJE LEGÍTIMO (HAM) - NO SE DETECTA AMENAZA
+                        🛡️ MENSAJE LEGÍTIMO (SEGURO) - NO SE DETECTA AMENAZA
                     </div>
                     """, unsafe_allow_html=True)
 
                 # Tarjetas de probabilidades
                 c_p1, c_p2, c_p3 = st.columns(3)
-                c_p1.metric("Probabilidad Spam", f"{res['spam_probability']*100:.2f}%")
+                c_p1.metric("Probabilidad de Spam", f"{res['spam_probability']*100:.2f}%")
                 c_p2.metric("Probabilidad Legítimo", f"{res['ham_probability']*100:.2f}%")
                 c_p3.metric("Confianza del Modelo", f"{res['confidence']*100:.2f}%")
 
@@ -367,12 +368,13 @@ def main():
             elif filtro_clase == "Solo Fallos":
                 df_filtrado = df_filtrado[df_filtrado["is_correct"] == False]
 
-            # Formatear tabla para presentación
+            # Formatear tabla para presentación en español
             display_df = df_filtrado.copy()
             display_df["spam_probability"] = display_df["spam_probability"].apply(lambda p: f"{p*100:.2f}%")
             display_df["Estado"] = display_df["is_correct"].apply(lambda ok: "✅ Acierto" if ok else "❌ Fallo")
-            display_df["true_label"] = display_df["true_label"].str.upper()
-            display_df["predicted_label"] = display_df["predicted_label"].str.upper()
+            label_map_es = {"ham": "🟢 LEGÍTIMO", "spam": "🚨 SPAM"}
+            display_df["true_label"] = display_df["true_label"].map(lambda x: label_map_es.get(x, x.upper()))
+            display_df["predicted_label"] = display_df["predicted_label"].map(lambda x: label_map_es.get(x, x.upper()))
             
             display_df = display_df.rename(columns={
                 "id": "ID",
@@ -417,7 +419,7 @@ def main():
                     with st.spinner("Procesando mensajes con el modelo BiLSTM..."):
                         preds_res = predictor.predict_batch(batch_df[col_sel].astype(str).tolist())
                         
-                    batch_df["Prediccion"] = [r["label"].upper() for r in preds_res]
+                    batch_df["Prediccion"] = ["SPAM" if r["is_spam"] else "LEGÍTIMO" for r in preds_res]
                     batch_df["Prob_Spam"] = [round(r["spam_probability"] * 100, 2) for r in preds_res]
                     batch_df["Confianza"] = [round(r["confidence"] * 100, 2) for r in preds_res]
                     
@@ -425,12 +427,12 @@ def main():
                     
                     # Gráfica de conteo de predicciones
                     spam_count = (batch_df["Prediccion"] == "SPAM").sum()
-                    ham_count = (batch_df["Prediccion"] == "HAM").sum()
+                    ham_count = (batch_df["Prediccion"] == "LEGÍTIMO").sum()
                     
                     col_b1, col_b2 = st.columns([1, 2])
                     with col_b1:
                         st.metric("Spam Detectados", f"{spam_count} ({spam_count/len(batch_df)*100:.1f}%)")
-                        st.metric("Legítimos (Ham)", f"{ham_count} ({ham_count/len(batch_df)*100:.1f}%)")
+                        st.metric("Mensajes Legítimos", f"{ham_count} ({ham_count/len(batch_df)*100:.1f}%)")
                     with col_b2:
                         st.dataframe(batch_df.head(20), use_container_width=True)
                         

@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.x-ff4b4b?logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/username/deep_learning_nlp_lstm/blob/main/notebooks/deep_learning_spam_lstm.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andresbry2020/rnn/blob/main/notebooks/deep_learning_spam_lstm.ipynb)
 
 Proyecto integral de **Deep Learning** que implementa una **Red Neuronal Recurrente Bidireccional (BiLSTM)** en **PyTorch** para la clasificación de datos secuenciales de texto, resolviendo el problema de detección en tiempo real de mensajes **Spam** y ataques de **Phishing** (SMS/mensajería) con **soporte bilingüe en Español 🇪🇸 e Inglés 🇺🇸**.
 
@@ -195,8 +195,8 @@ deep_learning_nlp_lstm/
 
 ### Paso 1: Clonar el repositorio
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd deep_learning_nlp_lstm
+git clone https://github.com/andresbry2020/rnn.git
+cd rnn
 ```
 
 ### Paso 2: Crear un entorno virtual e instalar dependencias
